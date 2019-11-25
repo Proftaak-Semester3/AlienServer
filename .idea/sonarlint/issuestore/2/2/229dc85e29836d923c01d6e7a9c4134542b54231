@@ -1,0 +1,7 @@
+
+‰squid:S4165"fRemove this useless assignment; "session2" already holds the assigned value along all execution paths.(¡†¾şÿÿÿÿ8Ñ„ß™ê-
+Wsquid:S4973$"9Use the "equals" method if value comparison was intended.(×½Ä8Ê—Ğ™ê-
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( ƒë²ùÿÿÿÿ
+_squid:S1126"AReplace this if-then-else statement by a single return statement.(™Ù‰¢8í—µ–ê-
+_squid:S1126$"AReplace this if-then-else statement by a single return statement.(×½Ä8Ê—Ğ™ê-
+Wsquid:S4973$"9Use the "equals" method if value comparison was intended.(×½Ä8Ê—Ğ™ê-
