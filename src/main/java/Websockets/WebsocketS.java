@@ -1,8 +1,8 @@
 package Websockets;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import org.json.JSONObject;
+
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.util.ArrayList;
@@ -15,36 +15,31 @@ public class WebsocketS {
     private messageHandler handler;
     private Gson gson;
 
-    public WebsocketS()
-    {
-        handler = new messageHandler();
+    public WebsocketS() {
+        handler = new messageHandler(this);
         gson = new Gson();
     }
 
     @OnOpen
     public void onConnect(Session session) {
         boolean gameAvailable = false;
-        System.out.println("[Connected] SessionID:"+session.getId());
+        System.out.println("[Connected] SessionID:" + session.getId());
         sessions.add(session);
-        for (Game game: games) {
-            if(!game.full())
-            {
+        for (Game game : games) {
+            if (!game.full()) {
                 game.join(session);
                 gameAvailable = true;
                 JSONObject json = new JSONObject();
                 try {
                     json.put("task", "found");
-                }
-                catch (Exception e)
-                {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 broadcast(json, game);
                 break;
             }
         }
-        if(!gameAvailable)
-        {
+        if (!gameAvailable) {
             Game game = new Game(session);
             games.add(game);
             System.out.println("new game made");
@@ -52,70 +47,87 @@ public class WebsocketS {
         System.out.println("[#sessions]: " + sessions.size());
 
     }
+
     @OnMessage
-    public void onText(String Message, Session session) {
+    public void onText(String Message, Session session) throws IllegalAccessException {
+        System.out.println(Message);
         JSONObject json = null;
         Game game = null;
         try {
             json = new JSONObject(Message);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        for (Game allgame: games) {
-            if(allgame.isPlayerHere(session))
-            {
+        for (Game allgame : games) {
+            if (allgame.isPlayerHere(session)) {
                 game = allgame;
             }
         }
-        handler.handleMessage(json, game);
+        if (game == null) {
+            throw new IllegalAccessException("user not found in a game");
+        }
+        handler.handleMessage(json, game, session);
     }
+
     @OnClose
     public void onClose(CloseReason reason, Session session) {
         System.out.println("[Session ID] : " + session.getId() + "[Socket Closed: " + reason);
         sessions.remove(session);
-        for (Game game: games) {
-            if(session.getId() == game.getSession1().getId() || session.getId() == game.getSession2().getId())
-            {
+        for (Game game : games) {
+            if (session.getId() == game.getSession1().getId() || session.getId() == game.getSession2().getId()) {
                 games.remove(game);
             }
         }
     }
+
     @OnError
     public void onError(Throwable cause, Session session) {
         System.out.println("[Session ID] : " + session.getId() + "[ERROR]: ");
         cause.printStackTrace(System.err);
     }
-    public void broadcast(JSONObject json) {
-        System.out.println("[Broadcast] {  } to:");
-        for(Session session : sessions) {
-            session.getAsyncRemote().sendObject(json);
-            System.out.println("\t\t >> Client associated with server side session ID: " + session.getId());
+
+    public void broadcast(JSONObject json, Game game, Session session) {
+        try {
+            if(json.get("task").equals("bullet"))
+            {
+                if(game.getSession1().getId() == session.getId())
+                {
+                    game.getSession2().getBasicRemote().sendText(json.toString());
+                }
+                else
+                {
+                    game.getSession1().getBasicRemote().sendText(json.toString());
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
         System.out.println("[End of Broadcast]");
     }
-    public void broadcast(JSONObject json, Game game)
-    {
-        JSONObject jsonfirst = json;
-        JSONObject jsonsecond = json;
+
+    public void broadcast(JSONObject json, Game game) {
         try {
-            jsonfirst.put("first", true);
-            game.getSession1().getBasicRemote().sendText(jsonfirst.toString());
-        }
-        catch (Exception e)
-        {
+            if (json.get("task").equals("found")) {
+                JSONObject jsonfirst = json;
+                JSONObject jsonsecond = json;
+
+                jsonfirst.put("first", true);
+                game.getSession1().getBasicRemote().sendText(jsonfirst.toString());
+
+                jsonsecond.put("first", false);
+                game.getSession2().getBasicRemote().sendText(jsonsecond.toString());
+
+            }
+            else if(json.get("task").equals("bullet"))
+            {
+                game.getSession1().getBasicRemote().sendText(json.toString());
+                game.getSession2().getBasicRemote().sendText(json.toString());
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        try
-        {
-            jsonsecond.put("first", false);
-            game.getSession2().getBasicRemote().sendText(jsonsecond.toString());
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+
         System.out.println("[End of Broadcast]");
     }
 }
