@@ -49,7 +49,7 @@ public class WebsocketS {
     }
 
     @OnMessage
-    public void onText(String Message, Session session) throws IllegalAccessException {
+    public void onText(String Message, Session session) {
         System.out.println(Message);
         JSONObject json = null;
         Game game = null;
@@ -62,9 +62,6 @@ public class WebsocketS {
             if (allgame.isPlayerHere(session)) {
                 game = allgame;
             }
-        }
-        if (game == null) {
-            throw new IllegalAccessException("user not found in a game");
         }
         handler.handleMessage(json, game, session);
     }
