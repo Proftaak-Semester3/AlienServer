@@ -44,7 +44,7 @@ public class Game {
     public JSONObject getStartposition1() { return startposition1; }
     public void setStartposition1(JSONObject startposition1) { this.startposition1 = startposition1; startposition++; }
     public boolean startPositionBothHere() {
-        if (startposition == 2) {
+        if (startposition == 1) {
             return true;
         }
         return false;
