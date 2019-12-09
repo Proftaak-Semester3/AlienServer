@@ -1,22 +1,29 @@
-package Websockets;
+package Websockets.websocketAddons;
 
+import Websockets.game.Game;
 import org.json.JSONObject;
+
+import javax.websocket.Session;
+import java.io.IOException;
 
 public class MessageBroadcaster {
 
+    public static void broadcast(JSONObject json, Session session)
+    {
+        try {
+            session.getBasicRemote().sendText(json.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public static void broadcast(JSONObject json, Game game)
     {
-        JSONObject json1 = new JSONObject();
-        JSONObject json2 = new JSONObject();
         try {
-            json1.put("task", "found");
-            json1.put("first", true);
-            game.getSession1().getBasicRemote().sendText(json1.toString());
-            json2.put("task", "found");
-            json2.put("first", false);
-            game.getSession2().getBasicRemote().sendText(json2.toString());
-
-        } catch (Exception e) {
+            game.getSession1().getBasicRemote().sendText(json.toString());
+            game.getSession2().getBasicRemote().sendText(json.toString());
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
     }

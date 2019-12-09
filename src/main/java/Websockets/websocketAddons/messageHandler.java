@@ -1,5 +1,7 @@
-package Websockets;
+package Websockets.websocketAddons;
 
+import Websockets.game.Game;
+import Websockets.websocket.HandlerContext;
 import org.json.JSONObject;
 
 import javax.websocket.Session;

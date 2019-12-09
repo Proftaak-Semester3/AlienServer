@@ -1,4 +1,8 @@
 package Websockets.messageCreator;
 
-public interface disconnectMessage {
+import Websockets.game.Game;
+import org.json.JSONObject;
+
+public interface iDisconnectMessage {
+    JSONObject disconnectMessage();
 }

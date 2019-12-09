@@ -1,4 +1,8 @@
 package Websockets.messageCreator;
 
-public interface bulletMessage {
+import Websockets.game.Game;
+import org.json.JSONObject;
+
+public interface iBulletMessage {
+    JSONObject bulletMessage(JSONObject json);
 }

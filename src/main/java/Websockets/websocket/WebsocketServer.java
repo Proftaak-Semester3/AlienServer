@@ -1,5 +1,6 @@
-package Websockets;
+package Websockets.websocket;
 
+import Websockets.websocket.WebsocketS;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;

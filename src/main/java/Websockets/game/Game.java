@@ -1,4 +1,4 @@
-package Websockets;
+package Websockets.game;
 
 import javax.websocket.Session;
 

@@ -1,4 +1,7 @@
 package Websockets.messageCreator;
 
-public interface iCheckMessage {
+import org.json.JSONObject;
+
+public interface iCheckStartPositionMessage {
+    JSONObject checkStartPositionMessage(boolean thesame);
 }

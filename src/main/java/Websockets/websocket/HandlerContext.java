@@ -1,5 +1,6 @@
-package Websockets;
+package Websockets.websocket;
 
+import Websockets.game.Game;
 import Websockets.handlers.BulletHandler;
 import Websockets.handlers.Handler;
 import org.json.JSONObject;
