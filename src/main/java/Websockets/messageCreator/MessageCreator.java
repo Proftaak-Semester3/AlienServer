@@ -3,7 +3,7 @@ package Websockets.messageCreator;
 import Websockets.game.Game;
 import org.json.JSONObject;
 
-public class startPositionMessageCreator implements iJsonCreator {
+public class MessageCreator implements iJsonCreator {
     @Override
     public JSONObject disconnectMessage() {
         JSONObject json = new JSONObject();

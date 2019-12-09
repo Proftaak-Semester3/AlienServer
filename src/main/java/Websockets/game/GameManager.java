@@ -1,9 +1,8 @@
 package Websockets.game;
 
 import Websockets.messageCreator.iJsonCreator;
-import Websockets.messageCreator.startPositionMessageCreator;
+import Websockets.messageCreator.MessageCreator;
 import Websockets.websocketAddons.MessageBroadcaster;
-import org.json.JSONObject;
 
 import javax.websocket.Session;
 import java.util.ArrayList;
@@ -14,7 +13,7 @@ public class GameManager {
 
     public GameManager()
     {
-        messageCreator = new startPositionMessageCreator();
+        messageCreator = new MessageCreator();
     }
 
     public void matchMaking(Session session)
