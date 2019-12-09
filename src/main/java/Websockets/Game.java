@@ -9,7 +9,6 @@ public class Game {
     public Game(Session session1)
     {
         this.session1 = session1;
-        this.session2 = session2;
     }
 
     public boolean full()
