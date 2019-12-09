@@ -3,6 +3,7 @@ package Websockets.websocket;
 import Websockets.game.Game;
 import Websockets.handlers.BulletHandler;
 import Websockets.handlers.Handler;
+import Websockets.handlers.startPositionHandler;
 import org.json.JSONObject;
 
 import javax.websocket.Session;
@@ -15,6 +16,7 @@ public class HandlerContext {
     static {
         handlers = new HashMap<>();
         handlers.put("bullet", new BulletHandler());
+        handlers.put("startposition", new startPositionHandler());
     }
 
     public static void processMessage(JSONObject json, Game game, Session session) {
