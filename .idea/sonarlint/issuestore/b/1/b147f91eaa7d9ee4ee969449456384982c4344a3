@@ -1,9 +1,0 @@
-
-Fsquid:S1148%"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8Γ½Ρ•κ-
-wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( ƒλ²ωÿÿÿÿ
-esquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Τ¨κκ
-Fsquid:S1148"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8«α•κ-
-Usquid:S2589"7Remove this expression which always evaluates to "true"(ιϊοΑ8ƒΣªικ-
-Msquid:S1481"/Remove this unused "horizontal" local variable.(ΒƒΉΆ8ƒΣªικ-
-Ksquid:S1481"-Remove this unused "vertical" local variable.(‹ΤΈ8ƒΣªικ-
-isquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(ψλ8ƒΣªικ-

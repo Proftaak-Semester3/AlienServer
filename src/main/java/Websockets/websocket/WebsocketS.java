@@ -43,8 +43,8 @@ public class WebsocketS {
     @OnClose
     public void onClose(CloseReason reason, Session session) {
         System.out.println("[Session ID] : " + session.getId() + "[Socket Closed: " + reason);
-        sessions.remove(session);
         gameManager.removeGame(session);
+        sessions.remove(session);
     }
 
     @OnError

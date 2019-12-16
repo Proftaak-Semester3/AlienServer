@@ -1,28 +1,0 @@
-
-~squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( ƒë²ùÿÿÿÿ8êÀª“ê-
-W
-squid:S106ƒ"9Replace this use of System.out or System.err by a logger.(œĞæ±8™ª±“ê-
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(û•€É8™ª±“ê-
-Fsquid:S1148$"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ÿ¦ºê-
-U
-squid:S106J"9Replace this use of System.out or System.err by a logger.(ùÜ¤8™ª±“ê-
-[
-squid:S106/"9Replace this use of System.out or System.err by a logger.(¼×éÜøÿÿÿÿ8™ª±“ê-
-Fsquid:S1148g"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Óûë™ê-
-V
-squid:S106j"9Replace this use of System.out or System.err by a logger.(œĞæ±8ƒÍ¡šê-
-[
-squid:S106-"9Replace this use of System.out or System.err by a logger.(ÄèÒÖÿÿÿÿÿ8Õí²šê-
-V
-squid:S106V"9Replace this use of System.out or System.err by a logger.(ŒÅ³ù8™ª±“ê-
-[
-squid:S106U"9Replace this use of System.out or System.err by a logger.(‚áàÜùÿÿÿÿ8™ª±“ê-
-Fsquid:S1148;"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¨„£šê-
-Gsquid:S1148€"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8·Àª•ê-
-Wsquid:S4973M"9Use the "equals" method if value comparison was intended.(‡’°Ï8ùÒªéê-
-Wsquid:S4973M"9Use the "equals" method if value comparison was intended.(‡’°Ï8ùÒªéê-
-Wsquid:S4973]"9Use the "equals" method if value comparison was intended.(ÎëŠë8ùÒªéê-
-usquid:S001174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿøñúÿÿÿÿ8ùÒªéê-
-V
-squid:S1065"9Replace this use of System.out or System.err by a logger.(ëÕÄ8ùÒªéê-

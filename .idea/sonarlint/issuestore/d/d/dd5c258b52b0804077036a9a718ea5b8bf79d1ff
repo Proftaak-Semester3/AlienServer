@@ -1,0 +1,6 @@
+
+esquid:S00101
+"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(œ‚Şã
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ï‹Ÿÿÿÿÿÿ
+?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+ysquid:S1450"]Remove the "messageCreator" field and declare it as a local variable in the relevant methods.(ú÷¸Öıÿÿÿÿ

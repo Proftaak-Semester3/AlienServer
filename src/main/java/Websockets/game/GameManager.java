@@ -46,7 +46,7 @@ public class GameManager {
     }
     public void removeGame(Session session)
     {
-        Game toRemove = null;
+        /*Game toRemove = null;
         for (Game game: games) {
             if(game.getSession2().getId() == session.getId() || game.getSession1().getId() == session.getId())
             {
@@ -66,6 +66,6 @@ public class GameManager {
         {
             e.printStackTrace();
         }
-        games.remove(toRemove);
+        games.remove(toRemove);*/
     }
 }

@@ -1,0 +1,8 @@
+
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¡­ÌØ
+}squid:UselessImportCheck"TRemove this unnecessary import: same package classes are always implicitly imported.(Ã‘ïÞúÿÿÿÿ
+Asquid:S1181#"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+`squid:CallToDeprecatedMethod"8Remove this use of "configureContext"; it is deprecated.(ëš¤þ
+T
+squid:S106$"9Replace this use of System.out or System.err by a logger.(“äáÇùÿÿÿÿ
+bsquid:CommentedOutCodeLine "<This block of commented-out lines of code should be removed.(Îæ¾í
